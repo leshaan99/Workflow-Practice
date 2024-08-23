@@ -1,7 +1,7 @@
-name: workflow 01
+name: Deploy
 on: push
 jobs:
-  deploy:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: get code
@@ -10,8 +10,22 @@ jobs:
         run: npm install
       - name: lint
         run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+      - name: install dependencies
+        run: npm install
       - name: test code
         run: npm test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+      - name: install dependencies
+        run: npm install
       - name: build code
         run: npm run build
       - name: deploy code
