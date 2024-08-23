@@ -2,19 +2,19 @@ name: lint, test and deploy
 on: push
 jobs:
   lint:
-    runs-on: 
+    runs-on: ubuntu-latest
     steps:
       - name:
         run:
   test:
     needs: lint
-    runs-on: 
+    runs-on: ubuntu-latest
     steps:
       - name:
         run:
   deploy:
     needs: test
-    runs-on: 
+    runs-on: ubuntu-latest
     steps:
       - name:
         run:
