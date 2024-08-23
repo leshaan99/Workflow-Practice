@@ -1,7 +1,7 @@
-name: workflow 01
-on: push
+name: Handle issues
+on: issues
 jobs:
-  deploy:
+  output:
     runs-on: ubuntu-latest
     steps:
       - name: get code
