@@ -7,11 +7,13 @@ jobs:
       - name:
         run:
   test:
+    needs: lint
     runs-on: 
     steps:
       - name:
         run:
   deploy:
+    needs: test
     runs-on: 
     steps:
       - name:
